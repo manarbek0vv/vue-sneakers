@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+:root {
+  --frame-bg-color: #E7F6FF;
+  --main-bg-color: #FFFFFF;
+  --black-font-color: #000000;
+  --gray-font-color: #5C5C5C;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+  color: var(--color-text);
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar:-webkit-scrollbar {
+    display: none;
+
+  }
+
+  .favorite {
+    animation: scale 300ms ease-out 0ms 1 normal both;
+  }
+
+  .not-favorite {
+    animation: scale 300ms ease-out 0ms 1 reverse both;
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.3);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .appearance {
+    animation: appearance 400ms ease 0ms normal both;
+  }
+
+  @keyframes appearance {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+
+    0% {
+      transform: scale(1);
+    }
+  }
+
+  .modal-enter-active,
+  .modal-leave-active {
+    transition: all 0.3s ease;
+  }
+
+  .modal-enter-from,
+  .modal-leave-to {
+    opacity: 0;
+  }
+
+  /* ---------------- */
+
+  .side-enter-active,
+  .side-leave-active {
+    transition: all 300ms ease-out;
+  }
+
+  .side-enter-from,
+  .side-leave-to {
+    transform: translateX(100%);
+  }
+
+  /* -------------- */
+
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.5s ease;
+  }
+
+  .list-enter-from {
+    transform: scale(0.8);
+  }
+
+  .list-enter-to {
+    transform: scale(1);
+  }
+
+  .list-leave-from {
+    opacity: 1;
+  }
+
+  .list-leave-to {
+    opacity: 0;
+  }
+}
